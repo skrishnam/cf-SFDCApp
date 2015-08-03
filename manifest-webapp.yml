@@ -1,0 +1,9 @@
+---
+timeout: 180
+instances: 1
+memory: 256M
+applications:
+- name: sfdcwebapp
+  path: sfdc-web-app/.
+  command: node main.js
+  services: [ sfdcgateway ]

@@ -1,0 +1,15 @@
+---
+timeout: 180
+instances: 1
+memory: 512M
+#buildpack: toms-java-buildpack
+env:
+    SPRING_PROFILES_DEFAULT: cloud
+    CONFIG_SERVER_URL: http://config-server-20150731.cfapps.io
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
+applications:
+- name: sfdcApiGateway
+  host: sfdcapigateway
+  buildpack: https://github.com/cfmobile/java-buildpack
+  path: apigateway/target/apigateway-1.0-SNAPSHOT-runnable.jar
+  services: [ eureka-service ]

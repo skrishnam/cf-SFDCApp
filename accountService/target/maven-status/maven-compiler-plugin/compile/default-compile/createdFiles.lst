@@ -1,0 +1,8 @@
+io/pivotal/sfdc/domain/Contact.class
+io/pivotal/sfdc/domain/AccountList.class
+io/pivotal/sfdc/AccountServiceApplication.class
+io/pivotal/sfdc/domain/Account.class
+io/pivotal/sfdc/service/AuthService.class
+io/pivotal/sfdc/service/AccountService.class
+io/pivotal/sfdc/domain/Opportunity.class
+io/pivotal/sfdc/controller/AccountServiceController.class

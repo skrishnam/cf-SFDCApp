@@ -1,0 +1,7 @@
+---
+applications:
+ - name: apigateway
+   memory: 512M
+   instances: 1
+   buildpack: https://github.com/cfmobile/java-buildpack
+   path: target/apigateway-1.0-SNAPSHOT-runnable.jar

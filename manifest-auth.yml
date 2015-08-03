@@ -1,0 +1,14 @@
+---
+timeout: 180
+instances: 1
+memory: 512M
+#buildpack: toms-java-buildpack
+env:
+    SPRING_PROFILES_DEFAULT: cloud
+    CONFIG_SERVER_URL: http://config-server-20150731.cfapps.io
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
+applications:
+- name: authService
+  path: authService/target/authService-0.0.1-SNAPSHOT.jar
+  random-route: true
+  services: [ eureka-service, p-redis ]
