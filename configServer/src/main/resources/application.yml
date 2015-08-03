@@ -11,7 +11,7 @@ spring:
       server:
         git:
           uri: https://github.com/jigsheth57/cf-SFDCApp
-          searchPaths: config-repo
+          searchPaths: tree/master/config-repo, config-repo*
  #         username: jigsheth57
  #         password: '{cipher}7f770c11fe404e42b401803c20502004ba8ffdce5b5968c7d067d31c57503c83'
 server:
