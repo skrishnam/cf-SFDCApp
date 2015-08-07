@@ -32,7 +32,9 @@ public class ServiceController {
 
 	private static final Logger logger = LoggerFactory.getLogger(ServiceController.class);
 
-	private RestTemplate restTemplate = new RestTemplate();
+	@Autowired
+	@LoadBalanced
+	private RestTemplate restTemplate;
 
 	@Value("${sfdc.apigateway.endpoint}")
     private String apigatewayEP;
