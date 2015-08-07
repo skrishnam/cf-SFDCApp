@@ -101,8 +101,8 @@ app.all('/api/opportunity/:id', function(req, res) {
 });
 
 function getSFDCObjs(reqObj, req, res) {
-//	console.log("sending data to: "+reqObj.url);
-//	console.log("send data: "+reqObj.body);
+	console.log("sending data to: "+reqObj.url);
+	console.log("send data: "+reqObj.body);
 	sess = req.session;
 	if (sess.token) {
 		request({
@@ -114,8 +114,8 @@ function getSFDCObjs(reqObj, req, res) {
 			method : reqObj.method,
 			body : reqObj.body
 		}, function(error, response, body) {
-//			console.log("body: "+body);
-//			console.log("response.statusCode: "+response.statusCode);
+			console.log("body: "+body);
+			console.log("response.statusCode: "+response.statusCode);
 			(response.statusCode >= 200 && response.statusCode <= 299) ? res.end(body) : res.end(error);
 		});
 	} else {

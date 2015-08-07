@@ -5,12 +5,9 @@ memory: 512M
 #buildpack: toms-java-buildpack
 env:
     SPRING_PROFILES_DEFAULT: cloud
-    CONFIG_SERVER_URL: http://config-server-20150731.cfapps.io
+    CONFIG_SERVER_URL: http://config-server-20150731.west-1.fe.gopivotal.com
     JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
 applications:
-- name: config-server
-  path: configServer/target/configServer-0.0.1-SNAPSHOT.jar
-  host: config-server-20150731
 - name: authService
   path: authService/target/authService-0.0.1-SNAPSHOT.jar
   random-route: true
@@ -27,17 +24,17 @@ applications:
   path: opportunityService/target/opportunityService-0.0.1-SNAPSHOT.jar
   random-route: true
   services: [ eureka-service, p-redis ]
-- name: hystrixDashboard
-  path: hystrixDashboard/target/hystrixDashboard-0.0.1-SNAPSHOT.jar
-  random-route: true
-  services: [ eureka-service ]
-- name: sfdcApiGateway
+- name: apigateway
   host: sfdcapigateway
   buildpack: https://github.com/cfmobile/java-buildpack
   path: apigateway/target/apigateway-1.0-SNAPSHOT-runnable.jar
-  services: [ eureka-service ]
+  services: [ eureka-service, p-redis ]
 - name: sfdcwebapp
   memory: 256M
   path: sfdc-web-app/.
   command: node main.js
   services: [ sfdcgateway ]
+- name: hystrixDashboard
+  path: hystrixDashboard/target/hystrixDashboard-0.0.1-SNAPSHOT.jar
+  random-route: true
+  services: [ eureka-service ]

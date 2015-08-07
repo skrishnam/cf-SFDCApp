@@ -5,11 +5,11 @@ memory: 512M
 #buildpack: toms-java-buildpack
 env:
     SPRING_PROFILES_DEFAULT: cloud
-    CONFIG_SERVER_URL: http://config-server-20150731.cfapps.io
+    CONFIG_SERVER_URL: http://config-server-20150731.west-1.fe.gopivotal.com
     JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
 applications:
-- name: sfdcApiGateway
+- name: apigateway
   host: sfdcapigateway
   buildpack: https://github.com/cfmobile/java-buildpack
   path: apigateway/target/apigateway-1.0-SNAPSHOT-runnable.jar
-  services: [ eureka-service ]
+  services: [ eureka-service, p-redis ]

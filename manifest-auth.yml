@@ -11,4 +11,4 @@ applications:
 - name: authService
   path: authService/target/authService-0.0.1-SNAPSHOT.jar
   random-route: true
-  services: [ eureka-service ]
+  services: [ eureka-service, p-redis ]
