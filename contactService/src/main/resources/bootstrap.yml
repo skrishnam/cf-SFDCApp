@@ -1,6 +1,3 @@
 spring:
   application:
-    name: ${vcap.application.name:contactService}
-  cloud:
-    config:
-     uri: ${CONFIG_SERVER_URL:http://localhost:8888}
+    name: contactService

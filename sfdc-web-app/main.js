@@ -42,7 +42,7 @@ var gatewayURI = appEnv.getServiceCreds("sfdcgateway");
 if(gatewayURI) {
 	endpoint = gatewayURI.uri.toString();
 } else {
-	endpoint = "http://localhost:9005/api";
+	endpoint = "http://localhost:9011";
 }
 console.log("endpoint: "+endpoint);
 
@@ -52,7 +52,7 @@ console.log("endpoint: "+endpoint);
 
 //get all contacts group by accounts
 app.get('/api/accounts', function(req, res) {
-	var reqObj = {url: endpoint + "/accounts?fields=(Id,Name,Type)/Contacts/(Id,LastName)", method: req.method, body: ""};
+	var reqObj = {url: endpoint + "/accountservice/accounts", method: req.method, body: ""};
 	getSFDCObjs(reqObj, req, res);
 });
 
@@ -61,10 +61,10 @@ app.all('/api/account/:id', function(req, res) {
 	//console.log("account id: "+req.params.id);
 	var reqObj = "";
 	switch(req.method) {
-		case "POST" : reqObj = {url: endpoint + "/account/new", method: req.method, body: JSON.stringify(req.body)};break;
-		case "PUT" : delete req.body.Id; reqObj = {url: endpoint + "/account/"+req.params.id, method: req.method, body: JSON.stringify(req.body)};break;
-		case "DELETE" : reqObj = {url: endpoint + "/account/"+req.params.id, method: req.method, body: ""};break;
-		default : reqObj = {url: endpoint + "/account/"+req.params.id+"?fields=(Id,Name,Type,Description,Industry,Ownership,NumberOfEmployees,Website,Phone)", method: "GET", body: ""};break;
+		case "POST" : reqObj = {url: endpoint + "/accountservice/account/new", method: req.method, body: JSON.stringify(req.body)};break;
+		case "PUT" : delete req.body.Id; reqObj = {url: endpoint + "/accountservice/account/"+req.params.id, method: req.method, body: JSON.stringify(req.body)};break;
+		case "DELETE" : reqObj = {url: endpoint + "/accountservice/account/"+req.params.id, method: req.method, body: ""};break;
+		default : reqObj = {url: endpoint + "/accountservice/account/"+req.params.id, method: "GET", body: ""};break;
 	}
 	//console.log("body: "+reqObj.body);
 	getSFDCObjs(reqObj, req, res);
@@ -72,7 +72,7 @@ app.all('/api/account/:id', function(req, res) {
 
 //get all opportunities group by accounts
 app.get('/api/opp_by_accts', function(req, res) {
-	var reqObj = {url: endpoint + "/opp_by_accts?fields=(Id,Name,Type)/Opportunities/(Id,Name)", method: req.method, body: ""};
+	var reqObj = {url: endpoint + "/accountservice/opp_by_accts", method: req.method, body: ""};
 	getSFDCObjs(reqObj, req, res);
 });
 
@@ -80,10 +80,10 @@ app.get('/api/opp_by_accts', function(req, res) {
 app.all('/api/contact/:id', function(req, res) {
 	var reqObj = "";
 	switch(req.method) {
-		case "POST" : reqObj = {url: endpoint + "/contact/new", method: req.method, body: JSON.stringify(req.body)};break;
-		case "PUT" : delete req.body.Id; delete req.body.Name; reqObj = {url: endpoint + "/contact/"+req.params.id, method: req.method, body: JSON.stringify(req.body)};break;
-		case "DELETE" : reqObj = {url: endpoint + "/contact/"+req.params.id, method: req.method, body: ""};break;
-		default : reqObj = {url: endpoint + "/contact/"+req.params.id+"?fields=(Id,Salutation,Name,FirstName,LastName,Title,Department,Phone,MobilePhone,Email)", method: "GET", body: ""};break;
+		case "POST" : reqObj = {url: endpoint + "/contactservice/contact/new", method: req.method, body: JSON.stringify(req.body)};break;
+		case "PUT" : delete req.body.Id; delete req.body.Name; reqObj = {url: endpoint + "/contactservice/contact/"+req.params.id, method: req.method, body: JSON.stringify(req.body)};break;
+		case "DELETE" : reqObj = {url: endpoint + "/contactservice/contact/"+req.params.id, method: req.method, body: ""};break;
+		default : reqObj = {url: endpoint + "/contactservice/contact/"+req.params.id, method: "GET", body: ""};break;
 	}
 	getSFDCObjs(reqObj, req, res);
 });
@@ -92,10 +92,10 @@ app.all('/api/contact/:id', function(req, res) {
 app.all('/api/opportunity/:id', function(req, res) {
 	var reqObj = "";
 	switch(req.method) {
-		case "POST" : reqObj = {url: endpoint + "/opportunity/new", method: req.method, body: JSON.stringify(req.body)};break;
-		case "PUT" : delete req.body.Id; delete req.body.ExpectedRevenue; delete req.body.IsClosed; delete req.body.IsWon; reqObj = {url: endpoint + "/opportunity/"+req.params.id, method: req.method, body: JSON.stringify(req.body)};break;
-		case "DELETE" : reqObj = {url: endpoint + "/opportunity/"+req.params.id, method: req.method, body: ""};break;
-		default : reqObj = {url: endpoint + "/opportunity/"+req.params.id+"?fields=(Id,Name,Description,LeadSource,StageName,Amount,ExpectedRevenue,IsClosed,IsWon,NextStep,CloseDate)", method: "GET", body: ""};break;
+		case "POST" : reqObj = {url: endpoint + "/opportunityservice/opportunity/new", method: req.method, body: JSON.stringify(req.body)};break;
+		case "PUT" : delete req.body.Id; delete req.body.ExpectedRevenue; delete req.body.IsClosed; delete req.body.IsWon; reqObj = {url: endpoint + "/opportunityservice/opportunity/"+req.params.id, method: req.method, body: JSON.stringify(req.body)};break;
+		case "DELETE" : reqObj = {url: endpoint + "/opportunityservice/opportunity/"+req.params.id, method: req.method, body: ""};break;
+		default : reqObj = {url: endpoint + "/opportunityservice/opportunity/"+req.params.id, method: "GET", body: ""};break;
 	}
 	getSFDCObjs(reqObj, req, res);
 });
@@ -124,7 +124,7 @@ function getSFDCObjs(reqObj, req, res) {
 }
 
 function login(sess, res, uri) {
-	var url = endpoint + "/oauth2";
+	var url = endpoint + "/authservice/oauth2";
 	request({
 		url : url,
 		method : "GET"
@@ -132,7 +132,7 @@ function login(sess, res, uri) {
 		if (response.statusCode == 200) {
 			//console.log(body);
 			var jsonObj = JSON.parse(body);
-			sess.token = jsonObj.data.accessToken;
+			sess.token = jsonObj.accessToken;
 			res.redirect(uri);
 		}
 	});

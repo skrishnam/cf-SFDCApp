@@ -14,7 +14,7 @@ sfdcApp.controller('AccountListController', function($scope, $http) {
 		// when landing on the page, get all accounts and show them
 		$http.get('/accounts').success(function(data) {
 			console.log("response data: " + JSON.stringify(data));
-			$scope.accounts = data.data;
+			$scope.accounts = data;
 		}).error(function(data) {
 			console.log('Error: ' + data);
 			$scope.message = data.message;
@@ -44,8 +44,8 @@ sfdcApp.controller('EditAccountInfoController', function($scope, $http, $routePa
 		//console.log("updating account: "+JSON.stringify(account));
 		if($routeParams.id == "new") {
 			$http.post("/account/new", account).success(function(data, status, headers, config) {
-				$http.get("/account/" + data.data.id).success(function(data) {
-					$scope.account = data.data;
+				$http.get("/account/" + data.id).success(function(data) {
+					$scope.account = data;
 					$scope.message = "Successfully saved the account.";
 					$scope.error = "";
 				});				
@@ -56,7 +56,7 @@ sfdcApp.controller('EditAccountInfoController', function($scope, $http, $routePa
 		} else {
 			$http.put("/account/" + $routeParams.id, account).success(function(data, status, headers, config) {
 				$http.get("/account/" + $routeParams.id).success(function(data) {
-					$scope.account = data.data;
+					$scope.account = data;
 					$scope.message = "Successfully saved the account.";
 					$scope.error = "";
 				});				
@@ -82,7 +82,7 @@ sfdcApp.controller('EditAccountInfoController', function($scope, $http, $routePa
 	$scope.reset = function() {
 		if($routeParams.id != "new") {
 			$http.get("/account/" + $routeParams.id).success(function(data) {
-				$scope.account = data.data;
+				$scope.account = data;
 			});
 		}
 	}
@@ -94,8 +94,8 @@ sfdcApp.controller('EditAccountInfoController', function($scope, $http, $routePa
 sfdcApp.controller('OppAcctListController', function($scope, $http) {
 	$scope.getAccounts = function() {
 		$http.get('/opp_by_accts').success(function(data) {
-			//console.log("response data: " + JSON.stringify(data));
-			$scope.accounts = data.data;
+			console.log("response data: " + JSON.stringify(data));
+			$scope.accounts = data;
 		}).error(function(data) {
 			console.log('Error: ' + data);
 			$scope.message = data.message;
@@ -110,7 +110,7 @@ sfdcApp.controller('OppAcctListController', function($scope, $http) {
 sfdcApp.controller('AccountInfoController', function($scope, $http, $routeParams) {
 	$scope.getAccount = function() {
 		$http.get("/account/" + $routeParams.id).success(function(data) {
-			$scope.account = data.data;
+			$scope.account = data;
 		});				
 	};
 
@@ -136,8 +136,8 @@ sfdcApp.controller('EditContactInfoController', function($scope, $http, $routePa
 		if($routeParams.id == "new") {
 			contact.AccountId = $routeParams.accountId;
 			$http.post("/contact/new", contact).success(function(data, status, headers, config) {
-				$http.get("/contact/" + data.data.id).success(function(data) {
-					$scope.contact = data.data;
+				$http.get("/contact/" + data.id).success(function(data) {
+					$scope.contact = data;
 					$scope.message = "Successfully saved the contact.";
 					$scope.error = "";
 				});				
@@ -148,7 +148,7 @@ sfdcApp.controller('EditContactInfoController', function($scope, $http, $routePa
 		} else {
 			$http.put("/contact/" + $routeParams.id, contact).success(function(data, status, headers, config) {
 				$http.get("/contact/" + $routeParams.id).success(function(data) {
-					$scope.contact = data.data;
+					$scope.contact = data;
 					$scope.message = "Successfully saved the contact.";
 					$scope.error = "";
 				});				
@@ -174,7 +174,7 @@ sfdcApp.controller('EditContactInfoController', function($scope, $http, $routePa
 	$scope.reset = function() {
 		if($routeParams.id != "new") {
 			$http.get("/contact/" + $routeParams.id).success(function(data) {
-				$scope.contact = data.data;
+				$scope.contact = data;
 			});
 		}
 	}
@@ -187,7 +187,7 @@ sfdcApp.controller('ContactInfoController', function($scope, $http, $routeParams
 	$scope.getContact = function() {
 		$http.get('/contact/'+$routeParams.id).success(function(data) {
 			//console.log("response data: " + JSON.stringify(data));
-			$scope.contact = data.data;
+			$scope.contact = data;
 		}).error(function(data) {
 			console.log('Error: ' + data);
 			$scope.message = data.message;
@@ -216,8 +216,8 @@ sfdcApp.controller('EditOpportunityInfoController', function($scope, $http, $rou
 		if($routeParams.id == "new") {
 			opportunity.AccountId = $routeParams.accountId;
 			$http.post("/opportunity/new", opportunity).success(function(data, status, headers, config) {
-				$http.get("/opportunity/" + data.data.id).success(function(data) {
-					$scope.opportunity = data.data;
+				$http.get("/opportunity/" + data.id).success(function(data) {
+					$scope.opportunity = data;
 					$scope.message = "Successfully saved the opportunity.";
 					$scope.error = "";
 				});				
@@ -228,7 +228,7 @@ sfdcApp.controller('EditOpportunityInfoController', function($scope, $http, $rou
 		} else {
 			$http.put("/opportunity/" + $routeParams.id, opportunity).success(function(data, status, headers, config) {
 				$http.get("/opportunity/" + $routeParams.id).success(function(data) {
-					$scope.opportunity = data.data;
+					$scope.opportunity = data;
 					$scope.message = "Successfully saved the opportunity.";
 					$scope.error = "";
 				});				
@@ -254,7 +254,7 @@ sfdcApp.controller('EditOpportunityInfoController', function($scope, $http, $rou
 	$scope.reset = function() {
 		if($routeParams.id != "new") {
 			$http.get("/opportunity/" + $routeParams.id).success(function(data) {
-				$scope.opportunity = data.data;
+				$scope.opportunity = data;
 				$scope.opportunity.CloseDate = new Date($scope.opportunity.CloseDate);
 			});
 		}
@@ -268,7 +268,7 @@ sfdcApp.controller('OpportunityInfoController', function($scope, $http, $routePa
 	$scope.getOpportunity = function() {
 		$http.get('/opportunity/'+$routeParams.id).success(function(data) {
 			//console.log("response data: " + JSON.stringify(data));
-			$scope.opportunity = data.data;
+			$scope.opportunity = data;
 //			$scope.opportunity.CloseDate = new Date($scope.opportunity.CloseDate);
 //			$scope.opportunity.CloseDate.format = "MM/DD/YYYY";
 		}).error(function(data) {

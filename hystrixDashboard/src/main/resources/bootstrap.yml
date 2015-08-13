@@ -1,7 +1,5 @@
 spring:
   application:
-    name: ${vcap.application.name:hystrixDashboard}
-  cloud:
-    config:
-      uri: ${CONFIG_SERVER_URL:http://localhost:8888}
+    name: hystrixDashboard
+
     

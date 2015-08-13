@@ -4,6 +4,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.turbine.EnableTurbine;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan
 @EnableEurekaClient
 @EnableCircuitBreaker
+@EnableTurbine
 public class Application extends com.pivotal.mss.apigateway.Application {
 	
 	public static void main(String[] args) {

@@ -60,16 +60,20 @@ public class ServiceController {
 	private StringRedisTemplate redisTemplate;
 
     final ObjectMapper mapper = new ObjectMapper();
+    
+    final RegistryService regsrvc = new RegistryService();
 
    @RequestMapping(value = "/oauth2", method = RequestMethod.GET)
     public @ResponseBody String getoauth2() {
-    	return restTemplate.getForObject(authserviceEP+"/oauth2", String.class);
+	   String uri = regsrvc.getServiceUrl("authservice",authserviceEP);
+	   return restTemplate.getForObject(uri+"/oauth2", String.class);
     }
 
    @HystrixCommand(fallbackMethod = "getContactsByAccountsFallback")
    @RequestMapping(value = "/accounts", method = RequestMethod.GET)
     public @ResponseBody String getContactsByAccounts() {
-    	return restTemplate.getForObject(accountserviceEP+"/accounts", String.class);
+	   String uri = regsrvc.getServiceUrl("accountservice",accountserviceEP);
+	   return restTemplate.getForObject(uri+"/accounts", String.class);
     }
 
    public @ResponseBody String getContactsByAccountsFallback() {
@@ -90,7 +94,8 @@ public class ServiceController {
    @HystrixCommand(fallbackMethod = "getOpportunitesByAccountsFallback")
    @RequestMapping(value = "/opp_by_accts", method = RequestMethod.GET)
     public @ResponseBody String getOpportunitiesByAccounts() {
-    	return restTemplate.getForObject(accountserviceEP+"/opp_by_accts", String.class);
+	   String uri = regsrvc.getServiceUrl("accountservice",accountserviceEP);
+       return restTemplate.getForObject(uri+"/opp_by_accts", String.class);
     }
 
    public @ResponseBody String getOpportunitesByAccountsFallback() {
@@ -114,9 +119,10 @@ public class ServiceController {
 	    HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
 		String method = request.getMethod().toLowerCase();
 		String result = unavailable;
+		String uri = regsrvc.getServiceUrl("accountservice",accountserviceEP);
 		switch (method) {
 		case "put":
-			restTemplate.put(accountserviceEP+"/account/"+accountId, account);
+			restTemplate.put(uri+"/account/"+accountId, account);
 			try {
 				mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
 				StringWriter jsonData = new StringWriter();
@@ -127,7 +133,7 @@ public class ServiceController {
 			}
 			break;
 		default:
-			result = restTemplate.postForObject(accountserviceEP+"/account/"+accountId, account, String.class);
+			result = restTemplate.postForObject(uri+"/account/"+accountId, account, String.class);
 			break;
 		}
 		return result;
@@ -139,9 +145,10 @@ public class ServiceController {
 	    HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
 		String method = request.getMethod().toLowerCase();
 		String result = unavailable;
+		String uri = regsrvc.getServiceUrl("accountservice",accountserviceEP);
 		switch (method) {
 		case "delete":
-			restTemplate.delete(accountserviceEP+"/account/"+accountId);
+			restTemplate.delete(uri+"/account/"+accountId);
 			try {
 				Account account = new Account();
 				account.setId(accountId);
@@ -154,7 +161,7 @@ public class ServiceController {
 			}
 			break;
 		default:
-			result = restTemplate.getForObject(accountserviceEP+"/account/"+accountId, String.class);
+			result = restTemplate.getForObject(uri+"/account/"+accountId, String.class);
 			break;
 		}
 		return result;
@@ -166,9 +173,10 @@ public class ServiceController {
 	    HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
 		String method = request.getMethod().toLowerCase();
 		String result = unavailable;
+		String uri = regsrvc.getServiceUrl("contactservice",contactserviceEP);
 		switch (method) {
 		case "put":
-			restTemplate.put(contactserviceEP+"/contact/"+contactId, contact);
+			restTemplate.put(uri+"/contact/"+contactId, contact);
 			try {
 				mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
 				StringWriter jsonData = new StringWriter();
@@ -179,7 +187,7 @@ public class ServiceController {
 			}
 			break;
 		default:
-			result = restTemplate.postForObject(contactserviceEP+"/contact/"+contactId, contact, String.class);
+			result = restTemplate.postForObject(uri+"/contact/"+contactId, contact, String.class);
 			break;
 		}
 		return result;
@@ -191,9 +199,10 @@ public class ServiceController {
 	    HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
 		String method = request.getMethod().toLowerCase();
 		String result = unavailable;
+		String uri = regsrvc.getServiceUrl("contactservice",contactserviceEP);
 		switch (method) {
 		case "delete":
-			restTemplate.delete(contactserviceEP+"/contact/"+contactId);
+			restTemplate.delete(uri+"/contact/"+contactId);
 			try {
 				Contact contact = new Contact();
 				contact.setId(contactId);
@@ -206,7 +215,7 @@ public class ServiceController {
 			}
 			break;
 		default:
-			result = restTemplate.getForObject(contactserviceEP+"/contact/"+contactId, String.class);
+			result = restTemplate.getForObject(uri+"/contact/"+contactId, String.class);
 			break;
 		}
 		return result;
@@ -218,9 +227,10 @@ public class ServiceController {
 	    HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
 		String method = request.getMethod().toLowerCase();
 		String result = unavailable;
+		String uri = regsrvc.getServiceUrl("opportunityservice",opportunityserviceEP);
 		switch (method) {
 		case "put":
-			restTemplate.put(opportunityserviceEP+"/opportunity/"+opportunityId, opportunity);
+			restTemplate.put(uri+"/opportunity/"+opportunityId, opportunity);
 			try {
 				mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
 				StringWriter jsonData = new StringWriter();
@@ -231,7 +241,7 @@ public class ServiceController {
 			}
 			break;
 		default:
-			result = restTemplate.postForObject(opportunityserviceEP+"/opportunity/"+opportunityId, opportunity, String.class);
+			result = restTemplate.postForObject(uri+"/opportunity/"+opportunityId, opportunity, String.class);
 			break;
 		}
 		return result;
@@ -243,9 +253,10 @@ public class ServiceController {
 	    HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
 		String method = request.getMethod().toLowerCase();
 		String result = unavailable;
+		String uri = regsrvc.getServiceUrl("opportunityservice",opportunityserviceEP);
 		switch (method) {
 		case "delete":
-			restTemplate.delete(opportunityserviceEP+"/opportunity/"+opportunityId);
+			restTemplate.delete(uri+"/opportunity/"+opportunityId);
 			try {
 				Opportunity opportunity = new Opportunity();
 				opportunity.setId(opportunityId);
@@ -258,7 +269,7 @@ public class ServiceController {
 			}
 			break;
 		default:
-			result = restTemplate.getForObject(opportunityserviceEP+"/opportunity/"+opportunityId, String.class);
+			result = restTemplate.getForObject(uri+"/opportunity/"+opportunityId, String.class);
 			break;
 		}
 		return result;

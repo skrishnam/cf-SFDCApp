@@ -44,17 +44,17 @@ public class ServiceController {
 
    @RequestMapping(value = "/oauth2", method = RequestMethod.GET)
     public @ResponseBody String getoauth2() {
-    	return restTemplate.getForObject(apigatewayEP+"/oauth2", String.class);
+    	return restTemplate.getForObject(apigatewayEP+"/authservice/oauth2", String.class);
     }
 
    @RequestMapping(value = "/accounts", method = RequestMethod.GET)
     public @ResponseBody String getContactsByAccounts() {
-    	return restTemplate.getForObject(apigatewayEP+"/accounts?fields=(Id,Name,Type)/Contacts/(Id,LastName)", String.class);
+    	return restTemplate.getForObject(apigatewayEP+"/accountservice/accounts", String.class);
     }
 
    @RequestMapping(value = "/opp_by_accts", method = RequestMethod.GET)
     public @ResponseBody String getOpportunitiesByAccounts() {
-    	return restTemplate.getForObject(apigatewayEP+"/opp_by_accts?fields=(Id,Name,Type)/Opportunities/(Id,Name)", String.class);
+    	return restTemplate.getForObject(apigatewayEP+"/accountservice/opp_by_accts", String.class);
     }
 
    @RequestMapping(value = "/account/{id}", method={RequestMethod.POST, RequestMethod.PUT})
@@ -65,10 +65,10 @@ public class ServiceController {
 		String result = unavailable;
 		switch (method) {
 		case "put":
-			restTemplate.put(apigatewayEP+"/account/"+accountId, account);
+			restTemplate.put(apigatewayEP+"/accountservice/account/"+accountId, account);
 			break;
 		default:
-			result = restTemplate.postForObject(apigatewayEP+"/account/"+accountId, account, String.class);
+			result = restTemplate.postForObject(apigatewayEP+"/accountservice/account/"+accountId, account, String.class);
 			break;
 		}
 		return result;
@@ -82,10 +82,10 @@ public class ServiceController {
 		String result = unavailable;
 		switch (method) {
 		case "delete":
-			restTemplate.delete(apigatewayEP+"/account/"+accountId);
+			restTemplate.delete(apigatewayEP+"/accountservice/account/"+accountId);
 			break;
 		default:
-			result = restTemplate.getForObject(apigatewayEP+"/account/"+accountId+"?fields=(Id,Name,Type,Description,Industry,Ownership,NumberOfEmployees,Website,Phone)", String.class);
+			result = restTemplate.getForObject(apigatewayEP+"/accountservice/account/"+accountId, String.class);
 			break;
 		}
 		return result;
@@ -99,10 +99,10 @@ public class ServiceController {
 		String result = unavailable;
 		switch (method) {
 		case "put":
-			restTemplate.put(apigatewayEP+"/contact/"+contactId, contact);
+			restTemplate.put(apigatewayEP+"/contactservice/contact/"+contactId, contact);
 			break;
 		default:
-			result = restTemplate.postForObject(apigatewayEP+"/contact/"+contactId, contact, String.class);
+			result = restTemplate.postForObject(apigatewayEP+"/contactservice/contact/"+contactId, contact, String.class);
 			break;
 		}
 		return result;
@@ -116,10 +116,10 @@ public class ServiceController {
 		String result = unavailable;
 		switch (method) {
 		case "delete":
-			restTemplate.delete(apigatewayEP+"/contact/"+contactId);
+			restTemplate.delete(apigatewayEP+"/contactservice/contact/"+contactId);
 			break;
 		default:
-			result = restTemplate.getForObject(apigatewayEP+"/contact/"+contactId+"?fields=(Id,Salutation,Name,FirstName,LastName,Title,Department,Phone,MobilePhone,Email)", String.class);
+			result = restTemplate.getForObject(apigatewayEP+"/contactservice/contact/"+contactId, String.class);
 			break;
 		}
 		return result;
@@ -133,10 +133,10 @@ public class ServiceController {
 		String result = unavailable;
 		switch (method) {
 		case "put":
-			restTemplate.put(apigatewayEP+"/opportunity/"+opportunityId, opportunity);
+			restTemplate.put(apigatewayEP+"/opportunityservice/opportunity/"+opportunityId, opportunity);
 			break;
 		default:
-			result = restTemplate.postForObject(apigatewayEP+"/opportunity/"+opportunityId, opportunity, String.class);
+			result = restTemplate.postForObject(apigatewayEP+"/opportunityservice/opportunity/"+opportunityId, opportunity, String.class);
 			break;
 		}
 		return result;
@@ -150,10 +150,10 @@ public class ServiceController {
 		String result = unavailable;
 		switch (method) {
 		case "delete":
-			restTemplate.delete(apigatewayEP+"/opportunity/"+opportunityId);
+			restTemplate.delete(apigatewayEP+"/opportunityservice/opportunity/"+opportunityId);
 			break;
 		default:
-			result = restTemplate.getForObject(apigatewayEP+"/opportunity/"+opportunityId+"?fields=(Id,Name,Description,LeadSource,StageName,Amount,ExpectedRevenue,IsClosed,IsWon,NextStep,CloseDate)", String.class);
+			result = restTemplate.getForObject(apigatewayEP+"/opportunityservice/opportunity/"+opportunityId, String.class);
 			break;
 		}
 		return result;
