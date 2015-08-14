@@ -1,0 +1,65 @@
+spring:
+  profiles.active: local
+server:
+  port: 9011
+
+
+#management.context-path=/manage
+#management.security.enabled=false
+#endpoints.env.id=env
+#endpoints.env.sensitive=true
+#endpoints.env.enabled=true
+#endpoints.env.keys-to-sanitize=pwd,uid,password,secret,key # suffix or regex
+#endpoints.health.id=health
+#endpoints.health.sensitive=true
+#endpoints.health.enabled=true
+#endpoints.health.mapping.*= # mapping of health statuses to HttpStatus codes
+#endpoints.health.time-to-live=1000
+#endpoints.info.id=info
+#endpoints.info.sensitive=false
+#endpoints.info.enabled=true
+
+logging:
+  level:
+    io.pivotal.sfdc: DEBUG
+#eureka.client.registerWithEureka = true
+#eureka.client.fetchRegistry = true
+#eureka.client.registryFetchIntervalSeconds = 10
+#eureka.instance.leaseRenewalIntervalInSeconds = 30
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://localhost:8761}/eureka/
+  instance:
+    statusPageUrlPath: ${management.context-path}/health
+    healthCheckUrlPath: ${management.context-path}/health
+    hostname: ${vcap.application.uris[0]:localhost}
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+#eureka.client.registerWithEureka = true
+#eureka.client.fetchRegistry = true
+#eureka.client.registryFetchIntervalSeconds = 10
+#eureka.instance.leaseRenewalIntervalInSeconds = 30
+
+zuul:
+  routes:
+    authservice: /authservice/**
+    accountservice: /accountservice/**
+    contactservice: /contactservice/**
+    opportunityservice: /opportunityservice/**
+  filter:
+    pre.path: pre
+    routing.path: route
+    post.path: post
+---
+spring:
+  profiles: local
+eureka:
+  instance:
+    nonSecurePort: ${server.port}
+---
+spring:
+  profiles: cloud # For deployment in Cloud Foundry
+eureka:
+  instance:
+    nonSecurePort:80

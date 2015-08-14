@@ -1,0 +1,68 @@
+spring:
+  profiles.active: local
+server:
+  port: 9000
+security:
+  basic:
+    enabled: false
+
+management:
+  context-path: /manage
+  security:
+    enabled: false
+#endpoints.env.id=env
+#endpoints.env.sensitive=true
+#endpoints.env.enabled=true
+endpoints:
+  env:
+    keys-to-sanitize: pwd,uid,password,secret,key,client_id,client_key # suffix or regex
+#endpoints.health.id=health
+#endpoints.health.sensitive=true
+#endpoints.health.enabled=true
+#endpoints.health.mapping.*= # mapping of health statuses to HttpStatus codes
+#endpoints.health.time-to-live=1000
+#endpoints.info.id=info
+#endpoints.info.sensitive=false
+#endpoints.info.enabled=true
+
+logging:
+  level:
+    io.pivotal.sfdc: INFO
+eureka:
+  instance:
+    statusPageUrlPath: ${management.context-path}/health
+    healthCheckUrlPath: ${management.context-path}/health
+    hostname: ${vcap.application.uris[0]:localhost}
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+
+#logging.level.io.pivotal.sfdc = INFO
+#eureka.client.serviceUrl.defaultZone = http://${vcap.services.eureka-service.credentials.uri:localhost:8761}/eureka/
+#eureka.client.registerWithEureka = true
+#eureka.client.fetchRegistry = true
+#eureka.client.registryFetchIntervalSeconds = 5
+#eureka.instance.hostname = ${vcap.application.uris[0]:localhost}
+#eureka.instance.nonSecurePort=80
+#eureka.instance.metadataMap.instanceId = ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+#eureka.instance.leaseRenewalIntervalInSeconds = 30
+#eureka.instance.statusPageUrlPath = ${management.context-path}/health
+#eureka.instance.healthCheckUrlPath = ${management.context-path}/health
+
+sfdc:
+  client_id: 3MVG9A2kN3Bn17hv8siDyJtftcr88aXG3TpBJIqO8QZac_dpXPEoQy08vgi651aB8y6QdfgCkW0HsDIyQeH1V
+  client_key: 4631320832041516337
+  uid: jigsheth@sfdc.com
+  pwd: Pivotal1234mpY9LIqi4zImvqRZI8zYP2p3
+
+---
+spring:
+  profiles: local
+eureka:
+  instance:
+    nonSecurePort: ${server.port}
+---
+spring:
+  profiles: cloud # For deployment in Cloud Foundry
+eureka:
+  instance:
+    nonSecurePort:80
