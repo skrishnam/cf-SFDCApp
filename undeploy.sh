@@ -10,8 +10,8 @@ cf d -r sfdcnodewebapp
 cf d -r sfdcbootwebapp
 cf ds sfdcgateway -f
 cf ds data-grid-service -f
-cf ds monitor-dashboard -f
 cf ds eureka-service -f
 cf ds config-service -f
+cf ds monitor-dashboard -f
 cf a
 cf s
