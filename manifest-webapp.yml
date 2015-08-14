@@ -1,10 +1,8 @@
 ---
 applications:
-- name: sfdcwebapp
-memory: 256M
-host: sfdcwebapp
-instances: 1
-path: sfdc-web-app/.
-command: node main.js
-services:
-- sfdcgateway
+- name: sfdcwebapp-node
+  memory: 256M
+  host: sfdcwebapp-node
+  path: sfdc-web-app/.
+  command: node main.js
+  services: [ sfdcgateway ]
