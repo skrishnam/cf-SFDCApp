@@ -7,8 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
- * The Spring configuration and entry point for
- * the application.
+ * The angular and bootstrap web application
  * 
  * @author Jignesh Sheth
  *

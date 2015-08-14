@@ -7,6 +7,7 @@ cf d -r contactService
 cf d -r opportunityService
 cf d -r sfdcapigateway
 cf d -r sfdcnodewebapp
+cf d -r sfdcbootwebapp
 cf ds sfdcgateway -f
 cf ds data-grid-service -f
 cf ds monitor-dashboard -f
