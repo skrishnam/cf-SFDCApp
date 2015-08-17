@@ -8,6 +8,10 @@ env:
 #    CONFIG_SERVER_URL: http://config-server-20150731.west-1.fe.gopivotal.com
     JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
 applications:
+- name: monitor-dashboard
+  path: hystrixDashboard/target/hystrixDashboard-0.0.1-SNAPSHOT.jar
+  random-route: true
+  services: [ config-service, eureka-service ]
 - name: authService
   path: authService/target/authService-0.0.1-SNAPSHOT.jar
   random-route: true
@@ -15,25 +19,25 @@ applications:
 - name: accountService
   path: accountService/target/accountService-0.0.1-SNAPSHOT.jar
   random-route: true
-  services: [ config-service, eureka-service, data-grid-service, monitor-dashboard ]
+  services: [ config-service, eureka-service, data-grid-service ]
 - name: contactService
   path: contactService/target/contactService-0.0.1-SNAPSHOT.jar
   random-route: true
-  services: [ config-service, eureka-service, data-grid-service, monitor-dashboard ]
+  services: [ config-service, eureka-service, data-grid-service ]
 - name: opportunityService
   path: opportunityService/target/opportunityService-0.0.1-SNAPSHOT.jar
   random-route: true
-  services: [ config-service, eureka-service, data-grid-service, monitor-dashboard ]
+  services: [ config-service, eureka-service, data-grid-service ]
 - name: sfdcapigateway
   host: sfdcapigateway
   path: sfdcapigateway/target/sfdcapigateway-0.0.1-SNAPSHOT.jar
   services: [ config-service, eureka-service, data-grid-service ]
+- name: sfdcbootwebapp
+  path: sfdcwebapp/target/sfdcwebapp-0.0.1-SNAPSHOT.jar
+  services: [ config-service, eureka-service ]
 - name: sfdcnodewebapp
   memory: 256M
   host: sfdcnodewebapp
   path: sfdc-web-app/.
   command: node main.js
   services: [ sfdcgateway ]
-- name: sfdcbootwebapp
-  path: sfdcwebapp/target/sfdcwebapp-0.0.1-SNAPSHOT.jar
-  services: [ config-service, eureka-service ]

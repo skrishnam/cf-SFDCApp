@@ -15,11 +15,21 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.netflix.zuul.filters.post.SendErrorFilter;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.netflix.zuul.context.RequestContext;
+
+/**
+ * This class implements error filter. When error occurs during routing of the HTTP Request to micro-service, 
+ * this error filter is invoked before responding to user's request. This error filter will attempt to retrieve
+ * response from the redis, if available.
+ * 
+ * @author Jignesh Sheth
+ *
+ */
 
 public class FallBackFilter extends SendErrorFilter {
 
@@ -29,7 +39,10 @@ public class FallBackFilter extends SendErrorFilter {
 	@Autowired
 	private StringRedisTemplate redisTemplate;
 
-    final ObjectMapper mapper = new ObjectMapper();
+	@Value("${sfdc.service.unavailable}")
+	private String unavailable;
+
+	final ObjectMapper mapper = new ObjectMapper();
 	
 	@Override
 	public Object run() {
@@ -39,27 +52,41 @@ public class FallBackFilter extends SendErrorFilter {
 			RequestContext ctx = RequestContext.getCurrentContext();
 			logger.info("CurrentContext: "+ctx.toString());
 			String uri = (String) ctx.get("requestURI");
-			if(uri.equalsIgnoreCase("/accounts") || uri.equalsIgnoreCase("/opp_by_accts")) {
-				List<Account> result = null;
-				String jsonDataStr = null;
-				try {
-					result = ((AccountList)retrieve(uri, AccountList.class)).getAccounts();
-					StringWriter jsonData = new StringWriter();
-					mapper.writeValue(jsonData, result);
-					jsonDataStr = jsonData.toString();
-					writeResponse(jsonDataStr);
-				} catch (Exception e) {
-					e.printStackTrace();
+			String method = ctx.getRequest().getMethod();
+			if(method.equalsIgnoreCase("get")) {
+				if(uri.equalsIgnoreCase("/accounts") || uri.equalsIgnoreCase("/opp_by_accts")) {
+					List<Account> result = null;
+					String jsonDataStr = null;
+					try {
+						result = ((AccountList)retrieve(uri, AccountList.class)).getAccounts();
+						StringWriter jsonData = new StringWriter();
+						mapper.writeValue(jsonData, result);
+						jsonDataStr = jsonData.toString();
+						writeResponse(jsonDataStr);
+					} catch (Exception e) {
+						logger.error(e.getMessage());
+					}
+				} else if((uri.indexOf("/account/") != -1) || (uri.indexOf("/contact/") != -1) || (uri.indexOf("/opportunity/") != -1)) {
+					try {
+						String jsonDataStr = this.redisTemplate.opsForValue().get(uri.substring(uri.lastIndexOf('/')+1));
+						if(jsonDataStr == null || jsonDataStr.isEmpty())
+							jsonDataStr = unavailable;
+						writeResponse(jsonDataStr);
+					} catch (Exception e) {
+						logger.error(e.getMessage());
+					}
 				}
+			} else {
+				writeResponse(unavailable);
 			}
-//			RequestDispatcher dispatcher = ctx.getRequest().getRequestDispatcher(arg0)
-//			if (!ctx.getResponse().isCommitted()) {
-//				dispatcher.forward(ctx.getRequest(), ctx.getResponse());
-//			}
 		} catch (Exception ex) {
 			logger.error(ex.getMessage());
+			try {
+				writeResponse(unavailable);
+			} catch (Exception e) {
+				logger.error(e.getMessage());
+			}
 		}
-//		super.run();
 		return null;
 	}
 
@@ -67,20 +94,26 @@ public class FallBackFilter extends SendErrorFilter {
 		RequestContext context = RequestContext.getCurrentContext();
 
 		HttpServletResponse servletResponse = context.getResponse();
-		servletResponse.setCharacterEncoding("UTF-8");
-		OutputStream outStream = servletResponse.getOutputStream();
-		try {
-				writeResponse(new ByteArrayInputStream(body.getBytes()), outStream);
-				return;
+		servletResponse.setContentType("application/json; charset=UTF-8");
+		if(body == null || body.isEmpty() || body.equals(unavailable)) {
+			logger.debug("error: "+body);
+			servletResponse.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
+		} else {
+			servletResponse.setStatus(HttpServletResponse.SC_OK);
 		}
-		finally {
+			OutputStream outStream = servletResponse.getOutputStream();
 			try {
-				outStream.flush();
-				outStream.close();
+					writeResponse(new ByteArrayInputStream(body.getBytes()), outStream);
+					return;
 			}
-			catch (IOException ex) {
+			finally {
+				try {
+					outStream.flush();
+					outStream.close();
+				}
+				catch (IOException ex) {
+				}
 			}
-		}
 	}
 
 	private void writeResponse(InputStream zin, OutputStream out) throws Exception {

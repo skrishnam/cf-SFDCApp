@@ -142,7 +142,7 @@ sfdcApp.controller('EditContactInfoController', function($scope, $http, $routePa
 					$scope.error = "";
 				});				
 			}).error(function(data, status, headers, config) {
-				$scope.message = "";
+				$scope.message = data.data;
 				$scope.error = "There was an error saving the contact.";
 			});
 		} else {

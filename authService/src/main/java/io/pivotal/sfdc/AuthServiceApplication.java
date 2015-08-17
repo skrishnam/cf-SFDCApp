@@ -1,5 +1,7 @@
 package io.pivotal.sfdc;
 
+import io.pivotal.springcloud.ssl.CloudFoundryCertificateTruster;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,6 +23,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class AuthServiceApplication {
 
     public static void main(String[] args) {
+    	CloudFoundryCertificateTruster.trustCertificates();
         SpringApplication.run(AuthServiceApplication.class, args);
     }
 }
