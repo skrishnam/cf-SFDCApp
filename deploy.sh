@@ -2,7 +2,10 @@
 
 if [ -n "$1" ]
 then
+  mvn clean && mvn package -DskipTests
   cf t
+  echo -n "Validate the space & org, you are currently logged in before continuing!"
+  read
   cf cs p-config-server standard config-service
   cf cs p-service-registry standard eureka-service
   cf cs p-redis shared-vm data-grid-service
