@@ -459,3 +459,456 @@ Proxy opening connection to: http://localhost:9011/manage/hystrix.stream
 Proxy opening connection to: http://localhost:9011/manage/hystrix.stream
 
 
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hystrixDashboard 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:1.2.4.RELEASE:run (default-cli) > test-compile @ hystrixDashboard >>>
+[WARNING] The POM for io.pivotal.spring.cloud:cloudfoundry-certificate-truster:jar:1.0.0.BUILD-SNAPSHOT is missing, no dependency information available
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ hystrixDashboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ hystrixDashboard ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ hystrixDashboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/jsheth/Documents/workspace/microservice-samples/SFDCApp/hystrixDashboard/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ hystrixDashboard ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:1.2.4.RELEASE:run (default-cli) < test-compile @ hystrixDashboard <<<
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.2.4.RELEASE:run (default-cli) @ hystrixDashboard ---
+2015-08-20 11:16:24.114  INFO 34688 --- [lication.main()] i.p.sfdc.HystrixDashboardApplication     : Starting HystrixDashboardApplication on guest-192-168-96-22.la.pivotal.io with PID 34688 (/Users/jsheth/Documents/workspace/microservice-samples/SFDCApp/hystrixDashboard/target/classes started by jsheth in /Users/jsheth/Documents/workspace/microservice-samples/SFDCApp/hystrixDashboard)
+2015-08-20 11:16:24.248  INFO 34688 --- [lication.main()] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@41554c6: startup date [Thu Aug 20 11:16:24 CDT 2015]; root of context hierarchy
+2015-08-20 11:16:24.988  INFO 34688 --- [lication.main()] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-08-20 11:16:25.859  INFO 34688 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'encrypt.CONFIGURATION_PROPERTIES' of type [class org.springframework.cloud.bootstrap.encrypt.KeyProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-20 11:16:25.859  INFO 34688 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'encryptionBootstrapConfiguration' of type [class org.springframework.cloud.bootstrap.encrypt.EncryptionBootstrapConfiguration$$EnhancerBySpringCGLIB$$e6838d57] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-20 11:16:26.315  INFO 34688 --- [lication.main()] i.p.sfdc.HystrixDashboardApplication     : Started HystrixDashboardApplication in 3.387 seconds (JVM running for 14.874)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.2.4.RELEASE)
+
+2015-08-20 11:16:30.994  INFO 34688 --- [lication.main()] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource [name='configService', propertySources=[MapPropertySource [name='https://github.com/jigsheth57/config-repo/hystrixDashboard.yml']]]
+2015-08-20 11:16:31.016  INFO 34688 --- [lication.main()] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@53f59567: startup date [Thu Aug 20 11:16:31 CDT 2015]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@41554c6
+2015-08-20 11:16:33.347  INFO 34688 --- [lication.main()] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-08-20 11:16:34.083  INFO 34688 --- [lication.main()] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8f800740-a4fe-32c0-ac48-bd2999e1f2e2
+2015-08-20 11:16:34.087  INFO 34688 --- [lication.main()] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-08-20 11:16:34.259  INFO 34688 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.RefreshAutoConfiguration$ConfigurationPropertiesRebinderConfiguration' of type [class org.springframework.cloud.autoconfigure.RefreshAutoConfiguration$ConfigurationPropertiesRebinderConfiguration$$EnhancerBySpringCGLIB$$16ba5034] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-20 11:16:35.560  INFO 34688 --- [lication.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9010 (http)
+2015-08-20 11:16:36.489  INFO 34688 --- [lication.main()] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2015-08-20 11:16:36.491  INFO 34688 --- [lication.main()] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.23
+2015-08-20 11:16:36.660  INFO 34688 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2015-08-20 11:16:36.662  INFO 34688 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5646 ms
+2015-08-20 11:16:38.234  INFO 34688 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'proxyStreamServlet' to [/proxy.stream]
+2015-08-20 11:16:38.236  INFO 34688 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-08-20 11:16:38.249  INFO 34688 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-08-20 11:16:38.250  INFO 34688 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-08-20 11:16:38.564  INFO 34688 --- [lication.main()] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@53f59567: startup date [Thu Aug 20 11:16:31 CDT 2015]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@41554c6] and template loader path [classpath:/templates/]
+2015-08-20 11:16:38.566  INFO 34688 --- [lication.main()] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2015-08-20 11:16:39.930  WARN 34688 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2015-08-20 11:16:39.930  INFO 34688 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2015-08-20 11:16:39.999  INFO 34688 --- [lication.main()] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@53c8095a
+2015-08-20 11:16:41.031  INFO 34688 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@53f59567: startup date [Thu Aug 20 11:16:31 CDT 2015]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@41554c6
+2015-08-20 11:16:41.315  INFO 34688 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hystrix/{path}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.springframework.cloud.netflix.hystrix.dashboard.HystrixDashboardController.monitor(java.lang.String,org.springframework.ui.Model,org.springframework.web.context.request.WebRequest)
+2015-08-20 11:16:41.316  INFO 34688 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hystrix],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.springframework.cloud.netflix.hystrix.dashboard.HystrixDashboardController.home(org.springframework.ui.Model,org.springframework.web.context.request.WebRequest)
+2015-08-20 11:16:41.317  INFO 34688 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2015-08-20 11:16:41.318  INFO 34688 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2015-08-20 11:16:41.348  INFO 34688 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-08-20 11:16:41.348  INFO 34688 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-08-20 11:16:41.646  INFO 34688 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-08-20 11:16:42.448  WARN 34688 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2015-08-20 11:16:42.448  INFO 34688 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2015-08-20 11:16:42.466  INFO 34688 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-08-20 11:16:42.614  INFO 34688 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2015-08-20 11:16:42.615  INFO 34688 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2015-08-20 11:16:42.616  INFO 34688 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2015-08-20 11:16:42.618  INFO 34688 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2015-08-20 11:16:42.633  INFO 34688 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2015-08-20 11:16:42.701  INFO 34688 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=53f59567,type=ConfigurationPropertiesRebinder]
+2015-08-20 11:16:42.749  INFO 34688 --- [lication.main()] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2015-08-20 11:16:42.753  INFO 34688 --- [lication.main()] .p.EurekaConfigBasedInstanceInfoProvider : Setting initial instance status as: STARTING
+2015-08-20 11:16:44.588  INFO 34688 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2015-08-20 11:16:44.622  INFO 34688 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2015-08-20 11:16:44.622  INFO 34688 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2015-08-20 11:16:44.622  INFO 34688 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2015-08-20 11:16:44.622  INFO 34688 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2015-08-20 11:16:44.622  INFO 34688 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2015-08-20 11:16:45.117  INFO 34688 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2015-08-20 11:16:45.266  INFO 34688 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2015-08-20 11:16:45.307  INFO 34688 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2015-08-20 11:16:45.315  INFO 34688 --- [lication.main()] c.n.e.EurekaDiscoveryClientConfiguration : Registering application hystrixDashboard with eureka with status UP
+2015-08-20 11:16:45.620  INFO 34688 --- [lication.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9010 (http)
+2015-08-20 11:16:45.622  INFO 34688 --- [lication.main()] i.p.sfdc.HystrixDashboardApplication     : Started HystrixDashboardApplication in 23.931 seconds (JVM running for 34.181)
+2015-08-20 11:16:50.427  INFO 34688 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - Re-registering apps/HYSTRIXDASHBOARD
+2015-08-20 11:16:50.427  INFO 34688 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010: registering service...
+2015-08-20 11:16:50.474  INFO 34688 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - registration status: 204
+2015-08-20 11:17:15.311  INFO 34688 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2015-08-20 11:17:15.312  INFO 34688 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2015-08-20 11:17:15.312  INFO 34688 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2015-08-20 11:17:15.313  INFO 34688 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2015-08-20 11:17:15.313  INFO 34688 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2015-08-20 11:17:15.313  INFO 34688 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2015-08-20 11:17:15.317  INFO 34688 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2015-08-20 11:17:15.322  INFO 34688 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2015-08-20 11:17:25.313  INFO 34688 --- [scoveryClient-2] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - retransmit instance info with status UP
+2015-08-20 11:17:25.314  INFO 34688 --- [scoveryClient-2] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010: registering service...
+2015-08-20 11:17:25.324  INFO 34688 --- [scoveryClient-2] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - registration status: 204
+2015-08-20 11:17:25.531  INFO 34688 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - Re-registering apps/HYSTRIXDASHBOARD
+2015-08-20 11:17:25.531  INFO 34688 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010: registering service...
+2015-08-20 11:17:25.537  INFO 34688 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - registration status: 204
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hystrixDashboard 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:1.2.4.RELEASE:run (default-cli) > test-compile @ hystrixDashboard >>>
+[WARNING] The POM for io.pivotal.spring.cloud:cloudfoundry-certificate-truster:jar:1.0.0.BUILD-SNAPSHOT is missing, no dependency information available
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ hystrixDashboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ hystrixDashboard ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ hystrixDashboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/jsheth/Documents/workspace/microservice-samples/SFDCApp/hystrixDashboard/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ hystrixDashboard ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:1.2.4.RELEASE:run (default-cli) < test-compile @ hystrixDashboard <<<
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.2.4.RELEASE:run (default-cli) @ hystrixDashboard ---
+2015-08-20 11:35:45.578  INFO 35222 --- [lication.main()] i.p.sfdc.HystrixDashboardApplication     : Starting HystrixDashboardApplication on Jigs-Work-MacBook-Pro.local with PID 35222 (/Users/jsheth/Documents/workspace/microservice-samples/SFDCApp/hystrixDashboard/target/classes started by jsheth in /Users/jsheth/Documents/workspace/microservice-samples/SFDCApp/hystrixDashboard)
+2015-08-20 11:35:45.754  INFO 35222 --- [lication.main()] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4f8f0b1e: startup date [Thu Aug 20 11:35:45 CDT 2015]; root of context hierarchy
+2015-08-20 11:35:46.417  INFO 35222 --- [lication.main()] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-08-20 11:35:47.114  INFO 35222 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'encrypt.CONFIGURATION_PROPERTIES' of type [class org.springframework.cloud.bootstrap.encrypt.KeyProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-20 11:35:47.115  INFO 35222 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'encryptionBootstrapConfiguration' of type [class org.springframework.cloud.bootstrap.encrypt.EncryptionBootstrapConfiguration$$EnhancerBySpringCGLIB$$c5ff3ea1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-20 11:35:47.281  INFO 35222 --- [lication.main()] i.p.sfdc.HystrixDashboardApplication     : Started HystrixDashboardApplication in 3.031 seconds (JVM running for 13.552)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.2.4.RELEASE)
+
+2015-08-20 11:35:48.887 ERROR 35222 --- [lication.main()] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: {"timestamp":1440088548786,"status":500,"error":"Internal Server Error","exception":"java.lang.IllegalStateException","message":"Cannot load environment","path":"/hystrixDashboard/default"}
+2015-08-20 11:35:48.896  INFO 35222 --- [lication.main()] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@51c1ef18: startup date [Thu Aug 20 11:35:48 CDT 2015]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4f8f0b1e
+2015-08-20 11:35:49.911  INFO 35222 --- [lication.main()] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-08-20 11:35:50.328  INFO 35222 --- [lication.main()] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8f800740-a4fe-32c0-ac48-bd2999e1f2e2
+2015-08-20 11:35:50.332  INFO 35222 --- [lication.main()] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-08-20 11:35:50.356  INFO 35222 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.RefreshAutoConfiguration$ConfigurationPropertiesRebinderConfiguration' of type [class org.springframework.cloud.autoconfigure.RefreshAutoConfiguration$ConfigurationPropertiesRebinderConfiguration$$EnhancerBySpringCGLIB$$f636017e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-20 11:35:51.807  INFO 35222 --- [lication.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9010 (http)
+2015-08-20 11:35:52.810  INFO 35222 --- [lication.main()] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2015-08-20 11:35:52.811  INFO 35222 --- [lication.main()] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.23
+2015-08-20 11:35:52.919  INFO 35222 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2015-08-20 11:35:52.919  INFO 35222 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4023 ms
+2015-08-20 11:35:54.304  INFO 35222 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'proxyStreamServlet' to [/proxy.stream]
+2015-08-20 11:35:54.315  INFO 35222 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-08-20 11:35:54.318  INFO 35222 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-08-20 11:35:54.319  INFO 35222 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-08-20 11:35:54.581  INFO 35222 --- [lication.main()] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@51c1ef18: startup date [Thu Aug 20 11:35:48 CDT 2015]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4f8f0b1e] and template loader path [classpath:/templates/]
+2015-08-20 11:35:54.583  INFO 35222 --- [lication.main()] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2015-08-20 11:35:55.888  WARN 35222 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2015-08-20 11:35:55.888  INFO 35222 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2015-08-20 11:35:55.942  INFO 35222 --- [lication.main()] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@10547778
+2015-08-20 11:35:56.665  INFO 35222 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@51c1ef18: startup date [Thu Aug 20 11:35:48 CDT 2015]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4f8f0b1e
+2015-08-20 11:35:56.950  INFO 35222 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hystrix/{path}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.springframework.cloud.netflix.hystrix.dashboard.HystrixDashboardController.monitor(java.lang.String,org.springframework.ui.Model,org.springframework.web.context.request.WebRequest)
+2015-08-20 11:35:56.950  INFO 35222 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hystrix],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.springframework.cloud.netflix.hystrix.dashboard.HystrixDashboardController.home(org.springframework.ui.Model,org.springframework.web.context.request.WebRequest)
+2015-08-20 11:35:56.951  INFO 35222 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2015-08-20 11:35:56.952  INFO 35222 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2015-08-20 11:35:57.075  INFO 35222 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-08-20 11:35:57.075  INFO 35222 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-08-20 11:35:57.211  INFO 35222 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-08-20 11:35:58.059  WARN 35222 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2015-08-20 11:35:58.059  INFO 35222 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2015-08-20 11:35:58.135  INFO 35222 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-08-20 11:35:58.146  INFO 35222 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2015-08-20 11:35:58.167  INFO 35222 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2015-08-20 11:35:58.168  INFO 35222 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2015-08-20 11:35:58.180  INFO 35222 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2015-08-20 11:35:58.235  INFO 35222 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2015-08-20 11:35:58.258  INFO 35222 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=51c1ef18,type=ConfigurationPropertiesRebinder]
+2015-08-20 11:35:58.266  INFO 35222 --- [lication.main()] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2015-08-20 11:35:58.270  INFO 35222 --- [lication.main()] .p.EurekaConfigBasedInstanceInfoProvider : Setting initial instance status as: STARTING
+2015-08-20 11:36:00.132  INFO 35222 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2015-08-20 11:36:00.133  INFO 35222 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2015-08-20 11:36:00.133  INFO 35222 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2015-08-20 11:36:00.134  INFO 35222 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2015-08-20 11:36:00.134  INFO 35222 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2015-08-20 11:36:00.134  INFO 35222 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2015-08-20 11:36:00.922  INFO 35222 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2015-08-20 11:36:00.966  INFO 35222 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2015-08-20 11:36:00.981  INFO 35222 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2015-08-20 11:36:00.991  INFO 35222 --- [lication.main()] c.n.e.EurekaDiscoveryClientConfiguration : Registering application hystrixDashboard with eureka with status UP
+2015-08-20 11:36:01.236  INFO 35222 --- [lication.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9010 (http)
+2015-08-20 11:36:01.238  INFO 35222 --- [lication.main()] i.p.sfdc.HystrixDashboardApplication     : Started HystrixDashboardApplication in 18.155 seconds (JVM running for 27.509)
+2015-08-20 11:36:06.135  INFO 35222 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - Re-registering apps/HYSTRIXDASHBOARD
+2015-08-20 11:36:06.135  INFO 35222 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010: registering service...
+2015-08-20 11:36:06.180  INFO 35222 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - registration status: 204
+2015-08-20 11:36:30.985  INFO 35222 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2015-08-20 11:36:30.986  INFO 35222 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2015-08-20 11:36:30.986  INFO 35222 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2015-08-20 11:36:30.986  INFO 35222 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2015-08-20 11:36:30.986  INFO 35222 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2015-08-20 11:36:30.986  INFO 35222 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2015-08-20 11:36:30.990  INFO 35222 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2015-08-20 11:36:30.999  INFO 35222 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2015-08-20 11:36:40.990  INFO 35222 --- [scoveryClient-3] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - retransmit instance info with status UP
+2015-08-20 11:36:40.990  INFO 35222 --- [scoveryClient-3] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010: registering service...
+2015-08-20 11:36:40.999  INFO 35222 --- [scoveryClient-3] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - registration status: 204
+2015-08-20 11:36:41.248  INFO 35222 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - Re-registering apps/HYSTRIXDASHBOARD
+2015-08-20 11:36:41.248  INFO 35222 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010: registering service...
+2015-08-20 11:36:41.254  INFO 35222 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - registration status: 204
+2015-08-20 11:38:35.277  INFO 35222 --- [nio-9010-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2015-08-20 11:38:35.278  INFO 35222 --- [nio-9010-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2015-08-20 11:38:35.297  INFO 35222 --- [nio-9010-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+2015-08-20 11:39:17.442  INFO 35222 --- [nio-9010-exec-7] ashboardConfiguration$ProxyStreamServlet : 
+
+Proxy opening connection to: http://localhost:9011/manage/hystrix.stream
+
+
+2015-08-20 11:39:17.443  INFO 35222 --- [nio-9010-exec-9] ashboardConfiguration$ProxyStreamServlet : 
+
+Proxy opening connection to: http://localhost:9011/manage/hystrix.stream
+
+
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hystrixDashboard 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:1.2.4.RELEASE:run (default-cli) > test-compile @ hystrixDashboard >>>
+[WARNING] The POM for io.pivotal.spring.cloud:cloudfoundry-certificate-truster:jar:1.0.0.BUILD-SNAPSHOT is missing, no dependency information available
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ hystrixDashboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ hystrixDashboard ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ hystrixDashboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/jsheth/Documents/workspace/microservice-samples/SFDCApp/hystrixDashboard/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ hystrixDashboard ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:1.2.4.RELEASE:run (default-cli) < test-compile @ hystrixDashboard <<<
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.2.4.RELEASE:run (default-cli) @ hystrixDashboard ---
+2015-08-20 15:54:41.817  INFO 38961 --- [lication.main()] i.p.sfdc.HystrixDashboardApplication     : Starting HystrixDashboardApplication on Jigs-Work-MacBook-Pro.local with PID 38961 (/Users/jsheth/Documents/workspace/microservice-samples/SFDCApp/hystrixDashboard/target/classes started by jsheth in /Users/jsheth/Documents/workspace/microservice-samples/SFDCApp/hystrixDashboard)
+2015-08-20 15:54:41.991  INFO 38961 --- [lication.main()] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4f8f0b1e: startup date [Thu Aug 20 15:54:41 CDT 2015]; root of context hierarchy
+2015-08-20 15:54:42.780  INFO 38961 --- [lication.main()] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-08-20 15:54:43.503  INFO 38961 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'encrypt.CONFIGURATION_PROPERTIES' of type [class org.springframework.cloud.bootstrap.encrypt.KeyProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-20 15:54:43.504  INFO 38961 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'encryptionBootstrapConfiguration' of type [class org.springframework.cloud.bootstrap.encrypt.EncryptionBootstrapConfiguration$$EnhancerBySpringCGLIB$$c5ff3ea1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-20 15:54:43.745  INFO 38961 --- [lication.main()] i.p.sfdc.HystrixDashboardApplication     : Started HystrixDashboardApplication in 3.264 seconds (JVM running for 14.044)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.2.4.RELEASE)
+
+2015-08-20 15:54:47.603  INFO 38961 --- [lication.main()] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource [name='configService', propertySources=[MapPropertySource [name='https://github.com/jigsheth57/config-repo/hystrixDashboard.yml']]]
+2015-08-20 15:54:47.643  INFO 38961 --- [lication.main()] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@51c1ef18: startup date [Thu Aug 20 15:54:47 CDT 2015]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4f8f0b1e
+2015-08-20 15:54:49.359  INFO 38961 --- [lication.main()] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-08-20 15:54:49.909  INFO 38961 --- [lication.main()] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8f800740-a4fe-32c0-ac48-bd2999e1f2e2
+2015-08-20 15:54:49.913  INFO 38961 --- [lication.main()] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-08-20 15:54:49.931  INFO 38961 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.RefreshAutoConfiguration$ConfigurationPropertiesRebinderConfiguration' of type [class org.springframework.cloud.autoconfigure.RefreshAutoConfiguration$ConfigurationPropertiesRebinderConfiguration$$EnhancerBySpringCGLIB$$f636017e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-20 15:54:51.145  INFO 38961 --- [lication.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9010 (http)
+2015-08-20 15:54:51.989  INFO 38961 --- [lication.main()] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2015-08-20 15:54:51.991  INFO 38961 --- [lication.main()] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.23
+2015-08-20 15:54:52.125  INFO 38961 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2015-08-20 15:54:52.125  INFO 38961 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4482 ms
+2015-08-20 15:54:53.497  INFO 38961 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'proxyStreamServlet' to [/proxy.stream]
+2015-08-20 15:54:53.499  INFO 38961 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-08-20 15:54:53.502  INFO 38961 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-08-20 15:54:53.503  INFO 38961 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-08-20 15:54:53.711  INFO 38961 --- [lication.main()] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@51c1ef18: startup date [Thu Aug 20 15:54:47 CDT 2015]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4f8f0b1e] and template loader path [classpath:/templates/]
+2015-08-20 15:54:53.712  INFO 38961 --- [lication.main()] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2015-08-20 15:54:55.033  WARN 38961 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2015-08-20 15:54:55.034  INFO 38961 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2015-08-20 15:54:55.071  INFO 38961 --- [lication.main()] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@560a39ee
+2015-08-20 15:54:55.964  INFO 38961 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@51c1ef18: startup date [Thu Aug 20 15:54:47 CDT 2015]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4f8f0b1e
+2015-08-20 15:54:56.202  INFO 38961 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hystrix/{path}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.springframework.cloud.netflix.hystrix.dashboard.HystrixDashboardController.monitor(java.lang.String,org.springframework.ui.Model,org.springframework.web.context.request.WebRequest)
+2015-08-20 15:54:56.203  INFO 38961 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hystrix],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.springframework.cloud.netflix.hystrix.dashboard.HystrixDashboardController.home(org.springframework.ui.Model,org.springframework.web.context.request.WebRequest)
+2015-08-20 15:54:56.204  INFO 38961 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2015-08-20 15:54:56.204  INFO 38961 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2015-08-20 15:54:56.278  INFO 38961 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-08-20 15:54:56.278  INFO 38961 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-08-20 15:54:56.392  INFO 38961 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-08-20 15:54:57.059  WARN 38961 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2015-08-20 15:54:57.059  INFO 38961 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2015-08-20 15:54:57.083  INFO 38961 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-08-20 15:54:57.147  INFO 38961 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2015-08-20 15:54:57.148  INFO 38961 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2015-08-20 15:54:57.149  INFO 38961 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2015-08-20 15:54:57.163  INFO 38961 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2015-08-20 15:54:57.216  INFO 38961 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2015-08-20 15:54:57.222  INFO 38961 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=51c1ef18,type=ConfigurationPropertiesRebinder]
+2015-08-20 15:54:57.264  INFO 38961 --- [lication.main()] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2015-08-20 15:54:57.269  INFO 38961 --- [lication.main()] .p.EurekaConfigBasedInstanceInfoProvider : Setting initial instance status as: STARTING
+2015-08-20 15:54:59.163  INFO 38961 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2015-08-20 15:54:59.165  INFO 38961 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2015-08-20 15:54:59.165  INFO 38961 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2015-08-20 15:54:59.165  INFO 38961 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2015-08-20 15:54:59.165  INFO 38961 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2015-08-20 15:54:59.165  INFO 38961 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2015-08-20 15:55:00.076  INFO 38961 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2015-08-20 15:55:00.172  INFO 38961 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2015-08-20 15:55:00.176  INFO 38961 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2015-08-20 15:55:00.186  INFO 38961 --- [lication.main()] c.n.e.EurekaDiscoveryClientConfiguration : Registering application hystrixDashboard with eureka with status UP
+2015-08-20 15:55:00.453  INFO 38961 --- [lication.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9010 (http)
+2015-08-20 15:55:00.454  INFO 38961 --- [lication.main()] i.p.sfdc.HystrixDashboardApplication     : Started HystrixDashboardApplication in 21.105 seconds (JVM running for 30.753)
+2015-08-20 15:55:05.442  INFO 38961 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - Re-registering apps/HYSTRIXDASHBOARD
+2015-08-20 15:55:05.443  INFO 38961 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010: registering service...
+2015-08-20 15:55:05.498  INFO 38961 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - registration status: 204
+2015-08-20 15:55:30.179  INFO 38961 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2015-08-20 15:55:30.180  INFO 38961 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2015-08-20 15:55:30.180  INFO 38961 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2015-08-20 15:55:30.180  INFO 38961 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2015-08-20 15:55:30.180  INFO 38961 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2015-08-20 15:55:30.181  INFO 38961 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2015-08-20 15:55:30.185  INFO 38961 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2015-08-20 15:55:30.195  INFO 38961 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2015-08-20 15:55:40.184  INFO 38961 --- [scoveryClient-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - retransmit instance info with status UP
+2015-08-20 15:55:40.185  INFO 38961 --- [scoveryClient-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010: registering service...
+2015-08-20 15:55:40.192  INFO 38961 --- [scoveryClient-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - registration status: 204
+2015-08-20 15:55:40.571  INFO 38961 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - Re-registering apps/HYSTRIXDASHBOARD
+2015-08-20 15:55:40.571  INFO 38961 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010: registering service...
+2015-08-20 15:55:40.613  INFO 38961 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - registration status: 204
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building hystrixDashboard 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:1.2.4.RELEASE:run (default-cli) > test-compile @ hystrixDashboard >>>
+[WARNING] The POM for io.pivotal.spring.cloud:cloudfoundry-certificate-truster:jar:1.0.0.BUILD-SNAPSHOT is missing, no dependency information available
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ hystrixDashboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ hystrixDashboard ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ hystrixDashboard ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/jsheth/Documents/workspace/microservice-samples/SFDCApp/hystrixDashboard/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ hystrixDashboard ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:1.2.4.RELEASE:run (default-cli) < test-compile @ hystrixDashboard <<<
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.2.4.RELEASE:run (default-cli) @ hystrixDashboard ---
+2015-08-21 12:53:52.863  INFO 43554 --- [lication.main()] i.p.sfdc.HystrixDashboardApplication     : Starting HystrixDashboardApplication on Jigs-Work-MacBook-Pro.local with PID 43554 (/Users/jsheth/Documents/workspace/microservice-samples/SFDCApp/hystrixDashboard/target/classes started by jsheth in /Users/jsheth/Documents/workspace/microservice-samples/SFDCApp/hystrixDashboard)
+2015-08-21 12:53:52.904  INFO 43554 --- [lication.main()] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4fa95b32: startup date [Fri Aug 21 12:53:52 CDT 2015]; root of context hierarchy
+2015-08-21 12:53:53.831  INFO 43554 --- [lication.main()] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-08-21 12:53:54.586  INFO 43554 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'encrypt.CONFIGURATION_PROPERTIES' of type [class org.springframework.cloud.bootstrap.encrypt.KeyProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-21 12:53:54.586  INFO 43554 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'encryptionBootstrapConfiguration' of type [class org.springframework.cloud.bootstrap.encrypt.EncryptionBootstrapConfiguration$$EnhancerBySpringCGLIB$$23b1dd2d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-21 12:53:54.835  INFO 43554 --- [lication.main()] i.p.sfdc.HystrixDashboardApplication     : Started HystrixDashboardApplication in 2.298 seconds (JVM running for 10.743)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.2.4.RELEASE)
+
+2015-08-21 12:54:01.930  INFO 43554 --- [lication.main()] b.c.PropertySourceBootstrapConfiguration : Located property source: CompositePropertySource [name='configService', propertySources=[MapPropertySource [name='https://github.com/jigsheth57/config-repo/hystrixDashboard.yml']]]
+2015-08-21 12:54:01.945  INFO 43554 --- [lication.main()] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@38bad3d1: startup date [Fri Aug 21 12:54:01 CDT 2015]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4fa95b32
+2015-08-21 12:54:02.277  INFO 43554 --- [lication.main()] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-08-21 12:54:02.430  INFO 43554 --- [lication.main()] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8f800740-a4fe-32c0-ac48-bd2999e1f2e2
+2015-08-21 12:54:02.434  INFO 43554 --- [lication.main()] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-08-21 12:54:02.457  INFO 43554 --- [lication.main()] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.RefreshAutoConfiguration$ConfigurationPropertiesRebinderConfiguration' of type [class org.springframework.cloud.autoconfigure.RefreshAutoConfiguration$ConfigurationPropertiesRebinderConfiguration$$EnhancerBySpringCGLIB$$53e8a00a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-08-21 12:54:02.895  INFO 43554 --- [lication.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9010 (http)
+2015-08-21 12:54:03.197  INFO 43554 --- [lication.main()] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2015-08-21 12:54:03.198  INFO 43554 --- [lication.main()] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.23
+2015-08-21 12:54:03.304  INFO 43554 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2015-08-21 12:54:03.304  INFO 43554 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1359 ms
+2015-08-21 12:54:04.055  INFO 43554 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'proxyStreamServlet' to [/proxy.stream]
+2015-08-21 12:54:04.056  INFO 43554 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-08-21 12:54:04.059  INFO 43554 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-08-21 12:54:04.060  INFO 43554 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-08-21 12:54:04.261  INFO 43554 --- [lication.main()] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@38bad3d1: startup date [Fri Aug 21 12:54:01 CDT 2015]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4fa95b32] and template loader path [classpath:/templates/]
+2015-08-21 12:54:04.262  INFO 43554 --- [lication.main()] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2015-08-21 12:54:05.107  WARN 43554 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2015-08-21 12:54:05.107  INFO 43554 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2015-08-21 12:54:05.155  INFO 43554 --- [lication.main()] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@62c1a7ed
+2015-08-21 12:54:05.949  INFO 43554 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@38bad3d1: startup date [Fri Aug 21 12:54:01 CDT 2015]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4fa95b32
+2015-08-21 12:54:06.327  INFO 43554 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hystrix/{path}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.springframework.cloud.netflix.hystrix.dashboard.HystrixDashboardController.monitor(java.lang.String,org.springframework.ui.Model,org.springframework.web.context.request.WebRequest)
+2015-08-21 12:54:06.328  INFO 43554 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hystrix],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String org.springframework.cloud.netflix.hystrix.dashboard.HystrixDashboardController.home(org.springframework.ui.Model,org.springframework.web.context.request.WebRequest)
+2015-08-21 12:54:06.329  INFO 43554 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2015-08-21 12:54:06.330  INFO 43554 --- [lication.main()] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2015-08-21 12:54:06.455  INFO 43554 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-08-21 12:54:06.456  INFO 43554 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-08-21 12:54:06.591  INFO 43554 --- [lication.main()] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-08-21 12:54:07.407  WARN 43554 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2015-08-21 12:54:07.407  INFO 43554 --- [lication.main()] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2015-08-21 12:54:07.453  INFO 43554 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-08-21 12:54:07.470  INFO 43554 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2015-08-21 12:54:07.471  INFO 43554 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2015-08-21 12:54:07.472  INFO 43554 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2015-08-21 12:54:07.476  INFO 43554 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2015-08-21 12:54:07.492  INFO 43554 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2015-08-21 12:54:07.501  INFO 43554 --- [lication.main()] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=38bad3d1,type=ConfigurationPropertiesRebinder]
+2015-08-21 12:54:07.510  INFO 43554 --- [lication.main()] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2015-08-21 12:54:07.599  INFO 43554 --- [lication.main()] .p.EurekaConfigBasedInstanceInfoProvider : Setting initial instance status as: STARTING
+2015-08-21 12:54:09.625  INFO 43554 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2015-08-21 12:54:09.627  INFO 43554 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2015-08-21 12:54:09.627  INFO 43554 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2015-08-21 12:54:09.627  INFO 43554 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2015-08-21 12:54:09.627  INFO 43554 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2015-08-21 12:54:09.627  INFO 43554 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2015-08-21 12:54:10.639  INFO 43554 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2015-08-21 12:54:10.689  INFO 43554 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2015-08-21 12:54:10.730  INFO 43554 --- [lication.main()] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2015-08-21 12:54:10.738  INFO 43554 --- [lication.main()] c.n.e.EurekaDiscoveryClientConfiguration : Registering application hystrixDashboard with eureka with status UP
+2015-08-21 12:54:11.000  INFO 43554 --- [lication.main()] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9010 (http)
+2015-08-21 12:54:11.001  INFO 43554 --- [lication.main()] i.p.sfdc.HystrixDashboardApplication     : Started HystrixDashboardApplication in 18.931 seconds (JVM running for 26.91)
+2015-08-21 12:54:15.977  INFO 43554 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - Re-registering apps/HYSTRIXDASHBOARD
+2015-08-21 12:54:15.977  INFO 43554 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010: registering service...
+2015-08-21 12:54:16.034  INFO 43554 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - registration status: 204
+2015-08-21 12:54:40.733  INFO 43554 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2015-08-21 12:54:40.734  INFO 43554 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2015-08-21 12:54:40.734  INFO 43554 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2015-08-21 12:54:40.734  INFO 43554 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2015-08-21 12:54:40.734  INFO 43554 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2015-08-21 12:54:40.735  INFO 43554 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2015-08-21 12:54:40.738  INFO 43554 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2015-08-21 12:54:40.745  INFO 43554 --- [pool-3-thread-1] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2015-08-21 12:54:50.738  INFO 43554 --- [scoveryClient-2] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - retransmit instance info with status UP
+2015-08-21 12:54:50.739  INFO 43554 --- [scoveryClient-2] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010: registering service...
+2015-08-21 12:54:50.746  INFO 43554 --- [scoveryClient-2] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - registration status: 204
+2015-08-21 12:54:51.104  INFO 43554 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - Re-registering apps/HYSTRIXDASHBOARD
+2015-08-21 12:54:51.104  INFO 43554 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010: registering service...
+2015-08-21 12:54:51.110  INFO 43554 --- [pool-2-thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HYSTRIXDASHBOARD/localhost:hystrixDashboard:9010 - registration status: 204

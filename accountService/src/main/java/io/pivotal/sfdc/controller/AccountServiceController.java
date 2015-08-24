@@ -165,7 +165,7 @@ public class AccountServiceController {
 			return new ResponseEntity<Account>(account, responseHeaders, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
     private List<Account> getResult(String key, String type) {
 	    logger.debug("URI: "+key);
     	List<Account> result = null;
@@ -185,5 +185,5 @@ public class AccountServiceController {
 		responseHeaders.set("Cache-Control", "no-cache");
 		return responseHeaders;
 	}
-
 }
+
